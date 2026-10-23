@@ -19,11 +19,11 @@
 - [x] Docker startup at port 8080 confirmed by the submitter.
 - [ ] Stop Docker containers after checking if they are no longer needed.
 - [x] Create a public GitHub repository with an anonymous random name.
-- [ ] Check the tracked files for secrets and unwanted personal identifiers.
-- [ ] Push the app, snapshot, lock files, tests, and documentation.
-- [ ] Deploy Python backend and React frontend to Vercel using the README.
-- [ ] Verify the backend data bundle, CORS origin, and frontend build-time API URL.
-- [ ] Update README with the real deployment URL.
+- [x] Check the tracked files for secrets and unwanted personal identifiers.
+- [x] Push the app, snapshot, lock files, tests, and documentation.
+- [x] Deploy Python backend and React frontend to separate Vercel projects.
+- [x] Verify the backend data bundle, CORS origin, and frontend build-time API URL.
+- [x] Update README with the real deployment URLs.
 
 ## Required video
 
@@ -43,4 +43,4 @@
 - [ ] Review the completed form before submitting it.
 - [ ] Keep total assignment work within the brief's 16-hour limit.
 
-The public repository is https://github.com/Arpitm544/k7v3m9. Deployment, video upload, and form submission are still outstanding.
+The public repository is https://github.com/Arpitm544/k7v3m9. Frontend: https://k7v3m9-frontend.vercel.app. Backend: https://k7v3m9-backend.vercel.app. Public access was verified with unauthenticated HTTP requests. Video upload, explicit incognito review, and form submission are still outstanding.

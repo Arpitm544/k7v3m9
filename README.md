@@ -8,13 +8,14 @@ The application includes real downloaded data, historical publication selection,
 
 ## Submission status
 
-- Local application: implemented.
-- Public deployment URL: pending deployment to the submitter's Vercel account.
+- Local application: implemented; Docker startup confirmed by the submitter.
+- Frontend: [Live application](https://k7v3m9-frontend.vercel.app).
+- Backend: [Python API](https://k7v3m9-backend.vercel.app/docs) · [Health check](https://k7v3m9-backend.vercel.app/api/health).
 - Unlisted YouTube video: pending recording and upload; see `docs/DEMO_SCRIPT.md`.
 - Public repository: [Arpitm544/k7v3m9](https://github.com/Arpitm544/k7v3m9).
 - Submission form: pending the three accessible links above.
 
-These are outstanding submission steps, not completed deliverables. Do not submit the assignment without the required video.
+The application and API are deployed as separate Vercel projects. The required video and final submission are still outstanding. Do not submit the assignment without the video.
 
 ## Run locally
 
@@ -158,7 +159,7 @@ backend/
   index.py                   Vercel Python entrypoint
   vercel.json                Include snapshot files in deployed function
   requirements.lock          Exact tested dependency versions
-  requirements.txt           Installs the lock file
+  requirements.txt           Same pinned versions flattened for Vercel compatibility
   Dockerfile                 Python API image
 scripts/fetch_data.py         Offline public-data ingestion
 scripts/check_snapshot.py     Independent snapshot verification
@@ -189,7 +190,7 @@ Dates outside January, reversed date ranges, and malformed cutoffs return HTTP 4
 
 Use two projects from the same repository so the required React and Python services remain independent.
 
-1. Create a Vercel project with root directory `backend`. Vercel detects the FastAPI `app` exported by `index.py`. Use Python 3.12; `requirements.txt` installs the pinned lock file and `vercel.json` includes the data files.
+1. Create a Vercel project with root directory `backend`. Vercel detects the FastAPI `app` exported by `index.py`. Use Python 3.12; `requirements.txt` contains the same pinned versions as the lock file and `vercel.json` includes the data files.
 2. Check `https://YOUR-BACKEND.vercel.app/api/health` and `/api/metadata`. Confirm the snapshot loads before moving on.
 3. Create a frontend Vercel project with root directory `frontend`, framework Vite, build `npm run build`, output `dist`.
 4. Set frontend build variable `VITE_API_URL=https://YOUR-BACKEND.vercel.app` without a trailing slash, then deploy.
